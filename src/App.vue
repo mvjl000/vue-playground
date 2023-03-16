@@ -6,6 +6,8 @@ import Navigation from "./components/Navigation.vue";
 <template>
   <div class="w-full h-screen flex">
     <Navigation />
-    <router-view />
+    <main class="w-full h-full p-8">
+      <router-view />
+    </main>
   </div>
 </template>

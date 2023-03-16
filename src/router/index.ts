@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Todo from "../components/Todo.vue";
-import DatePicker from "../components/DatePicker.vue";
+import Todo from "../components/pages/Todo.vue";
+import DatePicker from "../components/pages/DatePicker.vue";
 
 const routes = [
   {
