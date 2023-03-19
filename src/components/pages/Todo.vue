@@ -46,6 +46,7 @@ const toggleTask = (id: number) => {
         <input
           class="flex-grow h-16 px-2 bg-stone-800 rounded-md text-xl text-white border-none"
           v-model="task"
+          placeholder="Learn a new framework"
         />
         <button
           :disabled="isDisabled"
@@ -65,6 +66,11 @@ const toggleTask = (id: number) => {
             type="button"
             @click="toggleTask(todo.id)"
             class="px-2 py-1 flex-grow font-mono text-white text-lg bg-zinc-900 text-left hover:bg-zinc-800 focus-visible:bg-zinc-800"
+            :class="{
+              'bg-[#0a0a0a]': todo.done,
+              'hover:bg-[#111]': todo.done,
+              'focus-visible:bg-[#111]': todo.done,
+            }"
           >
             <span v-if="todo.done" class="line-through">{{ todo.text }}</span>
             <span v-else>{{ todo.text }}</span>
