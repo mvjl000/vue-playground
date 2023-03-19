@@ -12,7 +12,7 @@ import { RouterLink } from "vue-router";
           <router-link :to="{ name: 'todo' }">Todo</router-link>
         </li>
         <li class="hover:text-emerald-200">
-          <router-link :to="{ name: 'date' }">Date Picker</router-link>
+          <router-link :to="{ name: 'tabs' }">Tabs</router-link>
         </li>
       </ul>
     </nav>

@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Todo from "../components/pages/Todo.vue";
-import DatePicker from "../components/pages/DatePicker.vue";
+import Tabs from "../components/pages/Tabs.vue";
 
 const routes = [
   {
@@ -9,9 +9,9 @@ const routes = [
     component: Todo,
   },
   {
-    path: "/date",
-    name: "date",
-    component: DatePicker,
+    path: "/tabs",
+    name: "tabs",
+    component: Tabs,
   },
 ];
 
