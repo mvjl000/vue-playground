@@ -16,16 +16,28 @@ const tabs = ref<Tab[]>([
 ]);
 
 const activeTab = ref<number | null>(1);
+
 const activeTabContent = computed(() => {
   const activeTabObj = tabs.value.find((tab) => tab.id === activeTab.value);
-  console.log("activeOBJ", activeTabObj);
-  if (activeTabObj === undefined) return "Something went wrong!";
+
+  if (activeTabObj === undefined) return null;
 
   return activeTabObj.content;
 });
 
 const setAcitveTab = (tabId: number) => {
   activeTab.value = tabId;
+};
+
+const closeTab = (tabId: number) => {
+  if (tabs.value.length === 1) {
+    activeTab.value = null;
+  }
+
+  if (tabId === activeTab.value) {
+    activeTab.value = tabs.value[tabs.value.length - 1].id;
+  }
+  tabs.value = tabs.value.filter((tab) => tab.id !== tabId);
 };
 </script>
 
@@ -45,12 +57,15 @@ const setAcitveTab = (tabId: number) => {
           {{ tab.name }}
           <button
             class="invisible group-hover:visible w-6 h-6 text-sm flex items-center justify-center rounded-md hover:bg-stone-800"
+            @click.stop="closeTab(tab.id)"
           >
             x
           </button>
         </li>
       </ul>
-      <p class="p-5 text-white">{{ activeTabContent }}</p>
+      <p class="p-5 text-white">
+        {{ activeTabContent }} --- activeTab - {{ activeTab }}
+      </p>
     </div>
   </div>
 </template>
