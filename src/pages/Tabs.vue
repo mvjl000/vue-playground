@@ -46,12 +46,15 @@ const closeTab = (tabId: number) => {
   <div class="mt-8 w-full flex-grow flex">
     <div class="h-full min-w-[100px] w-1/6 bg-neutral-800"></div>
     <div class="flex flex-col h-full flex-grow bg-stone-900">
-      <ul class="h-14 flex justify-start items-end gap-2 bg-neutral-700">
+      <ul class="h-14 pl-2 flex justify-start items-end gap-2 bg-neutral-700">
         <li
           v-for="tab in tabs"
           :key="tab.id"
-          class="group h-2/3 pl-3 pr-1 flex justify-between items-center gap-1 text-white bg-stone-700 border-2 border-b-0 border-stone-900 rounded-tl-md rounded-tr-md cursor-pointer"
-          :class="{ 'bg-stone-900': activeTab === tab.id }"
+          class="group h-2/3 pl-3 pr-1 flex justify-between items-center gap-1 text-white border-2 border-b-0 border-stone-800 rounded-tl-md rounded-tr-md cursor-pointer hover:bg-stone-800"
+          :class="{
+            'bg-stone-900 hover:bg-stone-900': activeTab === tab.id,
+            'border-stone-900': activeTab === tab.id,
+          }"
           @click="setAcitveTab(tab.id)"
         >
           {{ tab.name }}

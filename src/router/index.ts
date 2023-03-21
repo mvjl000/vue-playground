@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Todo from "../components/pages/Todo.vue";
-import Tabs from "../components/pages/Tabs.vue";
+import Todo from "../pages/Todo.vue";
+import Tabs from "../pages/Tabs.vue";
 
 const routes = [
   {
